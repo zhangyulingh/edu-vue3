@@ -77,8 +77,8 @@ queryCourses()
       background
       layout="total, sizes, prev, pager, next, jumper"
       :total="queriedResult.total || 0"
-      @size-change="(pageSize) => queryCourses({ pageSize, currentPage: 1 })"
-      @current-change="(currentPage) => queryCourses({ currentPage })"
+      @size-change="(pageSize: any) => queryCourses({ pageSize, currentPage: 1 })"
+      @current-change="(currentPage: any) => queryCourses({ currentPage })"
     />
   </el-card>
 </template>

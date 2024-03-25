@@ -45,8 +45,8 @@ const isLogin = ref(false)
 </script>
 
 <template>
-  <div class="flex w-full h-100vh bg-#eee justify-center items-center">
-    <div class="w-300px bg-white p-4 rd-2">
+  <div class="flex w-full h-100vh bg-gradient-to-r from-red to-green justify-center items-center">
+    <div class="w-300px bg-#eee p-4 rd-2">
       <h2 class="my-2">登录</h2>
       <el-form :model="form" :rules="rules" ref="formref" label-position="top" size="large">
         <el-form-item label="手机号" prop="phone">

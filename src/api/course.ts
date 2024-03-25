@@ -36,6 +36,7 @@ export function getQueryCourses(params: QueryCondition = {}) {
   })
 }
 export interface Course {
+  id?: number
   courseName: string
   brief: string
   teacherDTO: TeacherDTO
@@ -135,5 +136,41 @@ export function getSectionAndLesson(courseId: string) {
     params: {
       courseId
     }
+  })
+}
+// 根据id获取章节信息
+export function getSectionById(sectionId: number) {
+  return request<Common<SectionDTO>>({
+    url: '/boss/course/section/getBySectionId',
+    method: 'get',
+    params: {
+      sectionId
+    }
+  })
+}
+// 新建或更新章节信息
+export function saveOrUpdateSection(data: Partial<SectionDTO>) {
+  return request<Common<boolean>>({
+    url: '/boss/course/section/saveOrUpdateSection',
+    method: 'post',
+    data
+  })
+}
+// 根据课时id获取课时信息
+export function getLessonById(lessonId: number) {
+  return request<Common<LessonDTO>>({
+    url: '/boss/course/lesson/getById',
+    method: 'get',
+    params: {
+      lessonId
+    }
+  })
+}
+// 课时添加或更新
+export function saveOrUpdateLesson(data: Partial<LessonDTO>) {
+  return request<Common<boolean>>({
+    url: '/boss/course/lesson/saveOrUpdate',
+    method: 'post',
+    data
   })
 }

@@ -67,7 +67,7 @@ export function useMenus() {
     } else {
       isCreate.value = false
     }
-    const res = await getEditMenuInfo(id)
+    const { data } = await getEditMenuInfo(id)
     if (data.code === '000000' && data.data) {
       form.value = data.data.menuIfo
     } else {

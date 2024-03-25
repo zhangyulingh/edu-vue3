@@ -98,8 +98,8 @@ watch(timeRange, (newVal) => {
           background
           layout="total, sizes, prev, pager, next, jumper"
           :total="queriedResult.total || 0"
-          @size-change="(pageSize) => queryUsers({ pageSize, currentPage: 1 })"
-          @current-change="(currentPage) => queryUsers({ currentPage })"
+          @size-change="(pageSize: any) => queryUsers({ pageSize, currentPage: 1 })"
+          @current-change="(currentPage: any) => queryUsers({ currentPage })"
         />
       </div>
       <DlgAllocRoles ref="dlgAllocRoles" />

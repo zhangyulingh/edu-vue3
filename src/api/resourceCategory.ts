@@ -10,6 +10,7 @@ export type ResourceCategory = {
   createdBy: string
   createdTime: string
   id: number
+  sort: number
   name: string
   operation: number | null
   selected: boolean
